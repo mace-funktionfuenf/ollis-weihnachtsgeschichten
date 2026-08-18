@@ -1,2 +1,2 @@
 # ollis-weihnachtsgeschichten
-Claude generiertes CMS
+CMS für https://www.ollis-weihnachtsgeschichten.de/
