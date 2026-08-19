@@ -1,5 +1,5 @@
 *OS
-
+*.claude
 # dependencies
 node_modules/
 
