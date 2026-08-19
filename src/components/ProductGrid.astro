@@ -1,0 +1,30 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  refs: CollectionEntry<'stories' | 'posts' | 'pages'>['data']['products'];
+}
+const { refs } = Astro.props;
+
+const entries = (
+  await Promise.all(refs.map((ref) => getEntry(ref)))
+).filter((e) => e !== undefined && e.data.active);
+---
+
+{
+  entries.length > 0 && (
+    <aside aria-label="Produktempfehlungen">
+      <p><small>Anzeige — Als Amazon-Partner verdient diese Seite an qualifizierten Käufen.</small></p>
+      <ul>
+        {entries.map((product) => (
+          <li>
+            <a href={product.data.url} rel="sponsored nofollow noopener" target="_blank">
+              {product.data.title}
+            </a>
+            {product.data.blurb && <p>{product.data.blurb}</p>}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}

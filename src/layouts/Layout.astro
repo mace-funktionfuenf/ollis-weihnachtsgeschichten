@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <header>
+      <a href="/">Ollis Weihnachtsgeschichten</a>
+      <nav>
+        <a href="/">Geschichten</a>
+        <a href="/adventskalender/">Adventskalender</a>
+        <a href="/geschenkideen/">Geschenkideen</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+      </nav>
+      <p>Als Amazon-Partner verdient diese Seite an qualifizierten Käufen.</p>
+    </footer>
+  </body>
+</html>

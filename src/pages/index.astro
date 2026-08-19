@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const stories = (await getCollection('stories'))
+  .filter((s) => s.data.kind === 'jahresgeschichte')
+  .sort((a, b) => b.data.year - a.data.year);
+---
+
+<Layout title="Ollis Weihnachtsgeschichten">
+  <h1>Ollis Weihnachtsgeschichten</h1>
+  <p>
+    Jedes Jahr zur Weihnachtszeit schreibt unser Autor Olaf Taubert eine neue lustige
+    Weihnachtsgeschichte rund um die Familie Staude.
+  </p>
+  <h2>Alle Geschichten</h2>
+  <ul>
+    {
+      stories.map((story) => (
+        <li>
+          <a href={`/${story.id}/`}>
+            {story.data.year}: {story.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

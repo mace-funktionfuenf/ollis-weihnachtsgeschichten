@@ -1,0 +1,30 @@
+*OS
+
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# vendored at build time by `npm run cms:vendor` — see public/admin/
+public/admin/decap-cms.js
+
+# local editing without GitHub round-trips (decap-server)
+.cache/
+
+# secrets — never committed, per rules/ops.md. The OAuth broker for /admin
+# login will need one of these once it exists.
+.env
+.env.*
+!.env.example
+
+# editors / OS
+.DS_Store
+.vscode/
+
+# NOTE: public/images/ is NOT ignored — migrated and CMS-uploaded images are
+# committed like any other asset, since Astro needs them present to build.
+# Images haven't been scraped/downloaded from the live site yet (text-only
+# migration so far) — src/content/*/*.md entries currently have no
+# heroImage set. That's a follow-up step, not a gitignore concern.
