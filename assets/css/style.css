@@ -1,0 +1,303 @@
+/*
+  Ollis Weihnachtsgeschichten — cozy/rustic Christmas theme.
+  System-font stacks only (no CDN/webfont loads, no external assets).
+*/
+
+:root {
+  --paper: #faf3e6;
+  --paper-dark: #f2e6d3;
+  --ink: #3c2f26;
+  --ink-soft: #6b5a4a;
+  --pine: #2f4a3a;
+  --pine-dark: #223828;
+  --berry: #a3293a;
+  --berry-dark: #82202d;
+  --gold: #c8952e;
+  --gold-soft: #e3c98a;
+  --border: #d8c6a6;
+
+  --font-heading: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: Georgia, "Palatino Linotype", Palatino, "Book Antiqua", serif;
+
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(60, 47, 38, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper-dark);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.65;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.6) 0, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.4) 0, transparent 40%),
+    var(--paper);
+}
+
+/* -- Header -------------------------------------------------- */
+
+header {
+  background: var(--pine);
+  background-image: linear-gradient(180deg, var(--pine) 0%, var(--pine-dark) 100%);
+  color: var(--paper);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 6px double var(--gold-soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+header a {
+  color: var(--paper);
+  text-decoration: none;
+}
+
+header > a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+header > a::before {
+  content: "🎄 ";
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+header nav a {
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: var(--gold-soft);
+  border-bottom-color: var(--gold-soft);
+}
+
+/* -- Main content -------------------------------------------- */
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--berry);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+  border-bottom: 3px solid var(--gold-soft);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--pine);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--berry);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+article > img {
+  display: block;
+  margin: 1.5rem 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 2rem 0;
+}
+
+/* -- Prose lists inside article bodies -------------------------- */
+
+article ul,
+article ol {
+  margin: 1rem 0 1.5rem;
+  padding-left: 1.4rem;
+}
+
+article li {
+  margin-bottom: 0.4rem;
+}
+
+article li::marker {
+  color: var(--gold);
+}
+
+/* Stacked headings with no body text between them (seen on pages ported
+   from WordPress shortcodes) read as a divided list rather than a gap. */
+article h2 + h2,
+article h3 + h3 {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* -- Story list (home page) ------------------------------------ */
+
+main > ul {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+main > ul > li {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+main > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(60, 47, 38, 0.16);
+}
+
+main > ul > li > a {
+  display: block;
+  padding: 0.9rem 1.15rem;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-heading);
+}
+
+main > ul > li > a::before {
+  content: "❄ ";
+  color: var(--gold);
+}
+
+/* -- Product grid (affiliate recommendations) ------------------ */
+
+aside[aria-label="Produktempfehlungen"] {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.25rem 0.5rem;
+  background: var(--paper-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+aside[aria-label="Produktempfehlungen"] > p {
+  margin-top: 0;
+  color: var(--ink-soft);
+}
+
+aside[aria-label="Produktempfehlungen"] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+aside[aria-label="Produktempfehlungen"] li {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+aside[aria-label="Produktempfehlungen"] li > a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--berry-dark);
+}
+
+aside[aria-label="Produktempfehlungen"] li img {
+  display: block;
+  width: 100%;
+  height: 9rem;
+  object-fit: contain;
+  background: var(--paper);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+aside[aria-label="Produktempfehlungen"] li > p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* -- Footer ----------------------------------------------------- */
+
+footer {
+  background: var(--pine-dark);
+  color: var(--gold-soft);
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 6px double var(--gold-soft);
+}
+
+footer nav {
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--paper);
+}
+
+footer p {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--gold-soft);
+  opacity: 0.85;
+}
+
+@media (max-width: 40rem) {
+  main {
+    padding: 1.75rem 1rem 2.5rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
