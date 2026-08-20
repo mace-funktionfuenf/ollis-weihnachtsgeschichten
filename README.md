@@ -1,17 +1,22 @@
 # ollis-weihnachtsgeschichten
 
 Static rebuild of [ollis-weihnachtsgeschichten.de](https://www.ollis-weihnachtsgeschichten.de/),
-migrating off WordPress to Astro. Content is edited via Decap CMS rather than wp-admin.
+migrating off WordPress. Content is Markdown + YAML frontmatter under `content/`, built into
+plain static HTML by a small PHP generator (no Node/build toolchain needed in production — the
+target host is PHP/MySQL shared hosting with no SSH).
 
 ## Stack
 
-- **[Astro](https://astro.build)** — static output, no server/database at runtime.
-- **Content collections** (`src/content.config.ts`) — six collections: `stories`, `posts`,
-  `products`, `authors`, `pages`. Filenames are frozen legacy WordPress slugs; the id is never
-  derived or re-slugified, so existing URLs keep working.
-- **[Decap CMS](https://decapcms.org)** (`/admin`) — git-backed editing with a draft → approve
-  workflow (`editorial_workflow`): one person drafts, another reviews and publishes. Login isn't
-  wired up yet — see the comment in `public/admin/config.yml`.
+- **`bin/build.php`** — reads `content/**/*.md` (five collections: `stories`, `posts`,
+  `products`, `authors`, `pages`) and writes static HTML to `public/`, one `slug/index.html`
+  per route. Filenames are frozen legacy WordPress slugs; the id is never derived or
+  re-slugified, so existing URLs keep working. See `src/` for the generator classes
+  (`ContentLoader`, `Validator`, `Renderer`, `Sitemap`, `UrlGuard`) and `templates/` for the
+  page templates.
+- **`admin/`** — a login-only, German-language admin UI (no self-registration) for editing
+  content without touching git or a code editor. Saving writes the Markdown file and regenerates
+  the static site in place. `admin/schema.php` defines the editable fields per collection; see
+  `config.example.php` and `sql/schema.sql` for setup.
 
 ## Status
 
@@ -39,15 +44,19 @@ Known gaps, not yet done:
 ## Running locally
 
 ```bash
-npm install
-npm run dev       # http://localhost:4321
-npm run build     # outputs to dist/
+composer install
+php bin/build.php               # outputs to public/
+php -S localhost:8000 -t public   # preview the built static site
+
+# admin UI (separate — see config.example.php first)
+cp config.example.php config.php
+php -S localhost:8001 -t admin
 ```
 
 ## Re-running the migration
 
 `npm run migrate` re-converts `OS/references/ollisweihnachtsgeschichten.WordPress.2026-08-19.xml`
-into `src/content/{stories,posts,pages}/`. It's idempotent — safe to re-run, always overwrites
+into `content/{stories,posts,pages}/`. It's idempotent — safe to re-run, always overwrites
 its output. Conversion warnings (stripped scripts, `[wpsleep]` date-gated content needing a
 human decision, high `<br>` counts) print to the console; the same items are also flagged
 inline in the generated Markdown with a `**[REDAKTIONELL PRÜFEN ...]**` marker where relevant.
