@@ -11,7 +11,7 @@ products: ["weihnachtsgeschichten-am-kamin-29","das-grosse-buch-der-weihnachtsge
 legacyId: 624
 ---
 
-[![Ollis lustige Weihnachtsgeschichte 2014 - Ein durchstartendes Weihnachtsfest](/uploads/lustige_weihnachtgeschichten_von_olli1-150x150.jpg)](/uploads/lustige_weihnachtgeschichten_von_olli1.jpg)**Ein friedliches Weihnachtsfest bei der Familie Staude? Auch wenn Mutter Christa dieses gehofft hat, es kommt immer anders als man denkt. Aber lesen Sie selbst unsere lustige Weihnachtsgeschichte 2014:**
+**Ein friedliches Weihnachtsfest bei der Familie Staude? Auch wenn Mutter Christa dieses gehofft hat, es kommt immer anders als man denkt. Aber lesen Sie selbst unsere lustige Weihnachtsgeschichte 2014:**
 
 ## Der Ausblick
 

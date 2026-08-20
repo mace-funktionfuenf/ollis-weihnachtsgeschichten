@@ -4,7 +4,7 @@ heroImage: "/uploads/advent-calendar-1236036_1280-pixabay-adventskalender.jpg"
 heroImageAlt: "Adventskalender - Bilde: pixabay.com - condesign"
 ---
 
-![Adventskalender - Bilde: pixabay.com - condesign](/uploads/advent-calendar-1236036_1280-pixabay-adventskalender-300x199.jpg)Adventskalender gehören heute in fast jedem Haushalt zur Vorbereitung auf Weihnachten dazu. Entstanden sind sie vor allem als Zeitzähler, um insbesondere Kindern die noch verbleibenden Tage bis zum Heiligabend zu visualisieren.
+Adventskalender gehören heute in fast jedem Haushalt zur Vorbereitung auf Weihnachten dazu. Entstanden sind sie vor allem als Zeitzähler, um insbesondere Kindern die noch verbleibenden Tage bis zum Heiligabend zu visualisieren.
 
 ## Die Ursprünge des Adventskalenders
 
