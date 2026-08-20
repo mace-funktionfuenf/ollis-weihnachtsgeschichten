@@ -99,9 +99,12 @@ const imageQueue = new Map(); // sourceUrl -> local filesystem URL (file://...)
 
 function wpUploadsLocalUrl(pathOrUrl) {
   const path = pathOrUrl.replace(SITE_ORIGIN, '');
+  // Source WordPress export URLs are always /wp-content/uploads/... — that
+  // pattern describes the legacy site, not our own output, so it stays as-is
+  // here even though our local copy no longer uses a wp-content wrapper.
   const match = path.match(/\/wp-content\/uploads\/(.+)$/);
   if (!match) return null;
-  return new URL(`public/wp-content/uploads/${match[1]}`, ROOT);
+  return new URL(`assets/uploads/${match[1]}`, ROOT);
 }
 
 function queueWpImage(pathOrUrl) {
@@ -112,14 +115,14 @@ function queueWpImage(pathOrUrl) {
     ? pathOrUrl
     : `https://www.ollis-weihnachtsgeschichten.de${pathOrUrl}`;
   imageQueue.set(sourceUrl, dest);
-  return `/wp-content/uploads/${dest.pathname.split('/wp-content/uploads/')[1]}`;
+  return `/uploads/${dest.pathname.split('/uploads/')[1]}`;
 }
 
 function queueProductImage(sourceUrl, slug) {
   const ext = (sourceUrl.match(/\.(jpe?g|png|webp|gif)(?:[?#]|$)/i)?.[1] ?? 'jpg').toLowerCase();
-  const dest = new URL(`public/images/products/${slug}.${ext}`, ROOT);
+  const dest = new URL(`assets/products/${slug}.${ext}`, ROOT);
   imageQueue.set(sourceUrl, dest);
-  return `/images/products/${slug}.${ext}`;
+  return `/products/${slug}.${ext}`;
 }
 
 async function downloadQueuedImages({ warnings }) {
@@ -291,7 +294,7 @@ function convertContent(rawHtml, { warnings, label, title, products = [] }) {
 // --- Product extraction (from the `product` custom post type) -------------
 
 // Maps the WordPress custom-taxonomy terms used to tag products onto the
-// same FORMATS/AUDIENCES enums used for stories (src/content.config.ts),
+// same FORMATS/AUDIENCES enums used for stories (see admin/schema.php),
 // so a product's tags and a story's tags are directly comparable.
 const WEIHNACHTSGESCHICHTEN_TAXONOMY_TO_FORMAT = {
   buecher: 'buch',
@@ -452,7 +455,7 @@ async function main() {
   const warnings = [];
   const legacyUrls = [];
 
-  const collectionsDir = (name) => new URL(`src/content/${name}/`, ROOT);
+  const collectionsDir = (name) => new URL(`content/${name}/`, ROOT);
   for (const name of ['stories', 'posts', 'pages', 'products']) {
     rmSync(collectionsDir(name), { recursive: true, force: true });
     mkdirSync(collectionsDir(name), { recursive: true });

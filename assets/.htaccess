@@ -1,0 +1,8 @@
+# Copied verbatim into public/ on every build (see src/Build.php).
+#
+# The site used to be WordPress, which served uploaded media from
+# /wp-content/uploads/. That folder is now just /uploads/ — this keeps any
+# external link, bookmark, or image-search result pointing at the old path
+# working instead of 404ing.
+RewriteEngine On
+RewriteRule ^wp-content/uploads/(.*)$ /uploads/$1 [R=301,L]

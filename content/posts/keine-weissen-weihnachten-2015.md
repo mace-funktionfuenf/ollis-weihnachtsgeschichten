@@ -1,0 +1,16 @@
+---
+title: "Keine weißen Weihnachten 2015"
+pubDate: "2015-12-15T13:58:42+01:00"
+author: "olaf"
+teaser: "[caption id=\"attachment_1019\" align=\"alignleft\" width=\"300\"] Schnee gibt es dieses Weihnachten wohl nur auf Bildern[/caption] Im Schnitt sind alle 4-5 Jahre weiße Weihnachten zu erwarten. Daher wäre zumindest statistisch gesehen in diesem Jahr wieder Schnee an Weihnachten zu…"
+heroImage: "/uploads/weihnachtsgeschichte-weihnachten1.jpg"
+heroImageAlt: "Schnee gibt es dieses Weihnachten wohl nur auf Bildern"
+categories: ["weihnachtsblog"]
+legacyId: 1018
+---
+
+\[caption id="attachment\_1019" align="alignleft" width="300"\][![Schnee gibt es dieses Weihnachten wohl nur auf Bildern](/uploads/weihnachtsgeschichte-weihnachten1-300x225.jpg)](/uploads/weihnachtsgeschichte-weihnachten1.jpg) Schnee gibt es dieses Weihnachten wohl nur auf Bildern\[/caption\] Im Schnitt sind alle 4-5 Jahre weiße Weihnachten zu erwarten. Daher wäre zumindest statistisch gesehen in diesem Jahr wieder Schnee an Weihnachten zu erwarten. Die Prognose des Vereins Berliner Wetterkarte an der Freien Universität Berlin geht davon aber in diesem Jahr nicht aus und prophezeit grüne Weihnachten 2015. Zurzeit herrsche eine wechselhafte Westwetterlage vor, die einen Kälte-Einbruch verhindere und nur Regen und Wind bringe, sagte Meteorologin Petra Gebauer in einer Pressemitteilung der Uni. Selbst in den Mittelgebirgen sei an den Feiertagen nicht mit Schnee zu rechnen. Zurzeit werde eine Durchschnittstemperatur von rund fünf Grad Celsius gemessen. Dies werde sich nicht gravierend ändern, denn „ein Tief gibt dem anderen zurzeit die Klinke in die Hand.“ Petra Gebauer betonte, nur im Jahr 1956 sei eine solche Wetterlage pünktlich zu Weihnachten von Kälte mit Schneefall abgelöst worden. Damals habe es Heiligabend einen Wetterumschwung durch ein Hoch über Skandinavien gegeben und bis zum zweiten Weihnachtsfeiertag schneite es anhaltend. Wahrscheinlich sei eine solche Entwicklung aus heutiger Sicht 2015 nicht.
+
+### Insgesamt milder Winter 2015 / 2016
+
+Nehme man die Vorgaben des Pioniers der Langfrist-Prognosen Franz Baur (1887–1977) zur Grundlage, dann sollte es einen insgesamt milden Winter geben, fügte Petra Gebauer hinzu. Baur zufolge ist ein milder Winter dann wahrscheinlich, wenn im ersten Drittel und in der ersten Hälfte des Monats Dezember die Temperaturen um 2,5 Grad über dem durchschnittlichen Normalwert für diesen Zeitraum lägen und gleichzeitig das Wetter durch Tiefs aus Westen bestimmt wird. Diese Vorgaben erfülle der Dezember 2015, da die Mittelwerte bereits jetzt zum Teil um 5 Grad über dem Normalwert liegen und mindestens bis zur Mitte des Monats keine Frosttemperaturen erwartet werden. Meteorologen sprechen nur dann von einem „weißen“ Weihnachtsfest, wenn an wenigstens zwei der drei Weihnachtstage eine geschlossene Schneedecke von mindestens einem Zentimeter Höhe liegt. Seit Beginn der Wetteraufzeichnungen in Berlin-Dahlem 1908 lag im Schnitt alle vier bis fünf Jahre an mindestens zwei Festtagen Schnee. Mit fast plus 16 Grad war der 24. Dezember 1977 der wärmste Heiligabend seit Beginn der Messungen. Weitere Infos: [Freie Universität Berlin](https://www.fu-berlin.de/presse/informationen/fup/2015/fup_15_394-pognose-gruene-weihnachten/index.html)
